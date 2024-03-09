@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled10/main.dart';
+import 'package:untitled10/navbar.dart';
 void main() {
   runApp( MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -142,7 +143,7 @@ class Second extends StatelessWidget{
                         height: 60,
                         child: ElevatedButton(
                           onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> MyApp()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> navbar()));
                         },
                           child: Text('Next',style: TextStyle(color: Colors.white),),
                           style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.greenAccent)),

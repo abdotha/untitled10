@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled10/navbar.dart';
 
 import 'main.dart';
 List<dynamic> dataList =
@@ -48,7 +49,7 @@ class _dataState extends State<data> {
                           dataList.add([1,_out1.text,_out2.text]);
                         else
                           dataList.add([2,_out1.text,_out2.text]);
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> MyApp()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> navbar()));
                       },
                         child: Text('back',),
                         style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.greenAccent)),

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:untitled10/daily.dart';
-import 'package:untitled10/dailydata.dart';
+import 'package:untitled10/navbar.dart';
 
 var in1="";
 var in2="";
@@ -23,7 +23,6 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
         useMaterial3: true,
@@ -37,14 +36,6 @@ class _MyAppState extends State<MyApp> {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -53,19 +44,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  int currentIndex=0;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -196,37 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         ],
       ),
-      bottomNavigationBar: NavigationBar(
-        destinations: [
-          NavigationDestination(icon: Icon(Icons.add_card), label: 'Dashboard'),
-
-          NavigationDestination(icon: Icon(Icons.add), label: 'Add'),
-
-          NavigationDestination(icon: Icon(Icons.book), label: 'Daily'),
-
-        ],
-        selectedIndex: currentIndex,
-        onDestinationSelected: (index) {
-          if (index==1)
-          _showOverlayPage(context);
-          else if(index==2)
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> daily()));
-          setState(() {
-            currentIndex=index;
-          }
-          );
-
-        },
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-
-  void _showOverlayPage(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return OverlayPage();
-      },
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
@@ -247,7 +196,7 @@ class _OverlayPageState extends State<OverlayPage> {
         children: [
           GestureDetector(
             onTap: () {
-              Navigator.pop(context); // Close the overlay page on tap
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> navbar()));
             },
             child: Container(
               color: Colors.black.withOpacity(0.5), // Semi-transparent background
@@ -273,10 +222,13 @@ class _OverlayPageState extends State<OverlayPage> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        width: double.infinity,
                         height: 120,
                         decoration: BoxDecoration(
-                            color: Colors.red,
                             borderRadius: BorderRadius.all(Radius.circular(20))),
+                        child: Image.asset('assets/images/image1.jpeg',
+                        fit: BoxFit.cover,),
                       ),
                     ),
                     Text('Diary'),
