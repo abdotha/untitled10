@@ -65,7 +65,7 @@ class _dataState extends State<data> {
                         child: Text('back',),
                         style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.greenAccent)),
                       ),
-                    ],
+                     ],
                   )
                 ],
               ),
