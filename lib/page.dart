@@ -52,13 +52,11 @@ class First extends StatelessWidget{
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              CircleAvatar(
-                                backgroundColor: Colors.greenAccent,
-                                child: Icon(Icons.add),
-                                radius: 30,
-                              ),
+                              Icon(Icons.task_alt,
+                              color: Colors.green,
+                              size: 90,),
                               SizedBox(height: 20,),
-                              Text('Login successfully',style: TextStyle(color: Colors.greenAccent,fontWeight: FontWeight.bold,fontSize: 17),),
+                              Text('Login successfully',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 17),),
                               SizedBox(height: 20,),
                               SizedBox(
                                 width: 200,

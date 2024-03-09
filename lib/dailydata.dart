@@ -49,14 +49,14 @@ class MyList extends StatelessWidget {
               subtitle: dataList[index][0]==1 ?Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('Weight= ${dataList[index][1]}'),
-                  Text('Body Fats= ${dataList[index][2]}'),
+                  Text('Weight= ${dataList[index][1]} Kg'),
+                  Text('Body Fats= ${dataList[index][2]} %'),
                 ],
               ):Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('Systolic= ${dataList[index][1]}',),
-                  Text('Diastolic= ${dataList[index][2]}'),
+                  Text('Systolic= ${dataList[index][1]} mmHg',),
+                  Text('Diastolic= ${dataList[index][2]} mmHg'),
                 ],
               ),
             ),
