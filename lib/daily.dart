@@ -46,14 +46,19 @@ class _dataState extends State<data> {
                     children: [
                       ElevatedButton(onPressed: (){
                         if(in1=="Weight") {
-                          dataList.add([1, _out1.text, _out2.text]);
-                          _out2.text="";
-                          _out1.text="";
+                          if(_out1.text!=""||_out2.text!="") {
+                            dataList.add([1, _out1.text, _out2.text]);
+                            _out2.text = "";
+                            _out1.text = "";
+                          }
                         }
                             else {
+                          if(_out1.text!=""||_out2.text!="")
+                            {
                           dataList.add([2, _out1.text, _out2.text]);
                           _out2.text="";
-                          _out1.text="";
+                          _out1.text="";}
+
                         }
                         Navigator.push(context, MaterialPageRoute(builder: (context)=> navbar()));
                       },
