@@ -45,10 +45,16 @@ class _dataState extends State<data> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(onPressed: (){
-                        if(in1=="Weight")
-                          dataList.add([1,_out1.text,_out2.text]);
-                        else
-                          dataList.add([2,_out1.text,_out2.text]);
+                        if(in1=="Weight") {
+                          dataList.add([1, _out1.text, _out2.text]);
+                          _out2.text="";
+                          _out1.text="";
+                        }
+                            else {
+                          dataList.add([2, _out1.text, _out2.text]);
+                          _out2.text="";
+                          _out1.text="";
+                        }
                         Navigator.push(context, MaterialPageRoute(builder: (context)=> navbar()));
                       },
                         child: Text('back',),

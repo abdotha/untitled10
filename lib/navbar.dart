@@ -19,7 +19,7 @@ class _navbarState extends State<navbar> {
 
       bottomNavigationBar: NavigationBar(
         destinations: [
-          NavigationDestination(icon: Icon(Icons.add_card), label: 'Dashboard'),
+          NavigationDestination(icon: Icon(Icons.dashboard), label: 'Dashboard'),
 
           NavigationDestination(icon: Icon(Icons.add), label: 'Add'),
 

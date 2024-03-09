@@ -59,7 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
       backgroundColor: Color(0xffe0e0e0),
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.greenAccent,
+
         title: Text(widget.title),
       ),
       body: ListView(
@@ -74,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 150,
               child:  ListTile(
                 leading: Icon(Icons.directions_run,
+                color: Colors.blue,
                 size: 50,),
                 title: Text('Exercises'),
                 subtitle: Column(
@@ -145,7 +147,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               height: 150,
               child:  ListTile(
-                  leading: Icon(Icons.ac_unit,
+                  leading: Icon(Icons.water_drop,
+                  color: Colors.red,
                   size: 50,),
                   title: Text('A1C'),
                   subtitle: Column(
